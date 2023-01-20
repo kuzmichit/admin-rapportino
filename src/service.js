@@ -11,8 +11,8 @@ class Service extends Component {
     try {
       let response = await fetch(`${this._baseUrl}${this._resourseUrl}`);
       let res = await response.json();
-      //return res;
-      console.log(res);
+      return res;
+      //console.log(res);
 
     } catch (err) { // cattura gli errori sia in fetch che in response.json
       console.log(err)

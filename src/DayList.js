@@ -13,23 +13,27 @@ class DayList extends React.Component {
   service = new Service();
   
   didComponentMount() {
-    thid.getDaysList()
+    this.getDaysList()
+    console.log('mount')
   }
   
   getDaysList = () => {
     
     this.setState({
-      dayList: this.service.getResource()
+      //dayList: this.service.getResource()
       }) 
-    console.log('get')
+      console.log(this.state)
   }
   
   render() {
     const {dayList} = this.state;
     
+    return (
     <ul className='dayList'>
-      <dayList/>
+      {dayList}
+      <li>first item</li>
     </ul>
+    )
   }
 }
 

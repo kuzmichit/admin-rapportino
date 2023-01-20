@@ -14,9 +14,10 @@ class App extends React.Component {
           Hello {name}
         </h1>
         <button className='btn'
-          type='' onClick={()=>console.log('hello')}>Hello
+          onClick={()=>console.log('hello')}>
+          get list
         </button>
-        {DayList/}
+        <DayList/>
       </>
     );
   }
