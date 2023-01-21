@@ -7,32 +7,40 @@ import './style.css'
 
 class DayList extends React.Component {
   state = {
-    dayList: {},
+    dayList: [],
   }
-  
+
   service = new Service();
-  
+
   didComponentMount() {
-    this.getDaysList()
+    //this.getDaysList()
     console.log('mount')
   }
-  
+
   getDaysList = () => {
-    
-    this.setState({
-      //dayList: this.service.getResource()
-      }) 
-      console.log(this.state)
+    this.service.getResource()
+      .then(console.log)
+
+
+    /* this.setState({
+       dayList: this.service.getResource()
+       }) */
   }
-  
+
   render() {
-    const {dayList} = this.state;
-    
+    const { dayList } = this.state;
+
     return (
+      <>
     <ul className='dayList'>
-      {dayList}
+      {/* dayList*/}
       <li>first item</li>
     </ul>
+    <button className='btn'
+          onClick={this.getDaysList}>
+          get list
+     </button>
+     </>
     )
   }
 }
